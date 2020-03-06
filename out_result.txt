@@ -1,0 +1,8 @@
+[1;31m[*] cve-2020-1938-FD.py|127.0.0.1|Success|Found Vulnerability!!![1;31m
+
+[1;31m[*] cve-2020-1938-FD.py|127.0.0.1|Success|Found Vulnerability!!![1;31m
+
+[1;31m[*] cve-2020-1938-FD.py|127.0.0.1|Success|Found Vulnerability!!![1;31m
+[1;33m[*] cve-2020-1938-FD.py|127.0.0.1|Success|Found Vulnerability!!![1;33m
+[1;31m[*] cve-2020-1938-FD.py|127.0.0.1|Success|Found Vulnerability!!![1;31m
+[1;31m[*] cve-2020-1938-FD.py|127.0.0.1|Success|Found Vulnerability!!![1;31m
