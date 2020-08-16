@@ -195,6 +195,7 @@ def init_options(args):
         conf['targets'].append(node)
     if args['target_file']:
         targets = get_file_content(args['target_file'])
+        targets = [i for i in targets if i != '']
         for target in targets:
             node = {'target': '', 'port': '', 'param': ''}
             node['port'] = args['target_port']
@@ -276,12 +277,13 @@ def main():
      / ____/ /_/ / /__ ___/ / /_/ /_/ / /  / /_      
     /_/    \____/\___//____/\__/\__,_/_/   \__/      
 
+        '''
+    info = r'''
         version:1.0.3
         author:flystart  email:root@flystart.org
-        team:www.ms509.com
-        '''
-
-    logger.info(COLOR['blue'] + banner + COLOR['general'])
+        team: ms509.com
+    '''
+    logger.info(COLOR['blue'] + banner + COLOR['white']+ info + COLOR['general'])
     try:
         cmdLineOptions = cmdline_parser().__dict__
         paths['ROOT_PATH'] = os.path.dirname(os.path.realpath(__file__))
