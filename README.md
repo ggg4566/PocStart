@@ -1,8 +1,15 @@
 # PocStart
-[![Python 2.7](https://img.shields.io/badge/python-2.7-yellow.svg)](https://www.python.org/)[![License](https://img.shields.io/badge/license-GPLv3-red.svg)](https://github.com/ggg4566/PocStart/blob/master/LICENSE)
-轻量级漏洞验证和利用框架，用于批量验证和利用漏洞，参考[**poc-t**](https://github.com/Xyntax/POC-T/)和 [**pocsuite**](https://github.com/knownsec/Pocsuite/).
+[![Python 2.7](https://img.shields.io/badge/python-2.7-yellow.svg)](https://www.python.org/)[![Python 3.6](https://img.shields.io/badge/python-3.6-yellow.svg)](https://www.python.org/)[![License](https://img.shields.io/badge/license-GPLv3-red.svg)](https://github.com/ggg4566/PocStart/blob/master/LICENSE)
 
-![](https://raw.githubusercontent.com/ggg4566/PocStart/master/image/1.png)
+轻量级多线程并发漏洞检测和利用框架，用于批量验证和利用漏洞，参考[**poc-t**](https://github.com/Xyntax/POC-T/)和 [**pocsuite**](https://github.com/knownsec/Pocsuite/).用户可根据自己喜好和需求进行二次开发。
+
+---
+
+开发环境： windows python3.6 
+
+建议使用python3运行，python2官方已停止更新，后续新添加poc会使用python3开发
+
+![](./image/3.png)
 
 快速开始：
 ---
@@ -56,6 +63,8 @@ python PocStart.py -iF urls.txt -s TongdaOa/ -t 10 -o out_result.txt
 
 根据[pocs](https://github.com/ggg4566/PocStart/tree/master/pocs)目录下样例编写poc，只需要在特定的地方添加自己的代码即可，开发简单容易.
 
+用户可以根据自己喜好修改框架满足自己的需求
+
 ```python	
 #! /usr/bin/env python
 # -*- coding:utf-8 -*-
@@ -76,14 +85,10 @@ def verify(target_node):
     res = {}
     res['Info'] = ""
     res['Success'] = False
-    try :
-        '''your code.'''
-        if _keyword in response_text:
-                res['Info'] = 'FOUNDED VULNERABILTY!!!'
-                res['Success'] = True
-    except Exception,e:
-        res['Info'] = e.message
-        res['Success'] = False
+         '''your code.'''
+    if _keyword in response_text:
+          res['Info'] = 'FOUNDED VULNERABILTY!!!'
+          res['Success'] = True
     return res
 
 
@@ -93,23 +98,13 @@ def attack(target_node):
     res = {}
     res['Info'] = ""
     res['Success'] = False
-    try:
         '''your code.'''
-        response = sess.get(url)
-        if 200 == response.status_code:
-            res['Info'] = 'Shell_URL:%s'%(url)
-            res['Success'] = True
-    except Exception as e:
-        res['Info'] = e.message
-        res['Success'] = False
+    response = sess.get(url)
+    if 200 == response.status_code:
+        res['Info'] = 'Shell_URL:%s'%(url)
+        res['Success'] = True
     return res
 
-def poc(target,mode):
-    if mode == 'verify':
-        res =verify(target)
-    if mode == 'attack':
-        res = attack(target)
-    return res
 ```
 
 
