@@ -4,7 +4,6 @@
 # home:www.flystart.org
 # time:2020/6/15
 
-
 import queue
 import argparse
 import threading
@@ -15,7 +14,8 @@ import logging
 import imp
 import glob
 import traceback
-
+import warnings
+warnings.filterwarnings("ignore")
 
 logging.basicConfig(level = logging.INFO,format = '%(message)s')
 logger = logging.getLogger(__name__)
