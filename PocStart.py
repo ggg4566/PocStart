@@ -4,7 +4,6 @@
 # home:www.flystart.org
 # time:2020/6/15
 
-
 import queue
 import argparse
 import threading
@@ -15,10 +14,12 @@ import logging
 import imp
 import glob
 import traceback
+import warnings
+warnings.filterwarnings("ignore")
 
-
-logging.basicConfig(level = logging.INFO,format = '%(message)s')
+logging.basicConfig(filename='out.log',level=logging.INFO,format='%(asctime)s %(filename)s[line:%(lineno)d] %(message)s',datefmt='%Y-%m-%d %X')
 logger = logging.getLogger(__name__)
+logger.addHandler(logging.StreamHandler())
 
 paths = {'SCRIPT_PATH':'',
          'ROOT_PATH':''
